@@ -11300,3 +11300,8 @@ textarea.form-control-lg {
   box-shadow: 12px 12px 12px #e6dbb9;
   text-align: center;
 }
+
+.footer {
+  bottom: 0;
+  width: 100%;
+}

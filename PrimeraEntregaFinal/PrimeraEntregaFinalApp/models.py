@@ -40,3 +40,7 @@ class Administrador(models.Model):
 
 class Foro(models.Model):
     comentarios = models.CharField(max_length=300)
+
+class Comentario(models.Model):
+    nombre = models.CharField(max_length=30)
+    contenido = models.CharField(max_length=250)

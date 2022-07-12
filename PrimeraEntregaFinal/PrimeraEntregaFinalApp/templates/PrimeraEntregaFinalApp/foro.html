@@ -15,7 +15,34 @@ Foro - Primera Entrega Final App
   <title>Document</title>
 </head>
 <body>
-  Foro del Club
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 ">
+      <div class="card-body">
+        <!-- comments -->
+        <h2>Foro ({{ comments.count }} entradas)</h2>
+        {% for comment in comments %}
+        <div class="comments" style="padding: 10px;">
+          <p class="font-weight-bold">
+            {{ comment.nombre }}
+          </p>
+          {{ comment.contenido | linebreaks }}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-md-8 card mb-4  mt-3 ">
+      <div class="card-body">
+        <h3>Dejar una entrada</h3>
+        <form method="post" style="margin-top: 1.3em;">
+          {{ comment_form.as_p }}
+          {% csrf_token %}
+          <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
 {%endblock%}

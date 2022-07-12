@@ -58,7 +58,7 @@ ROOT_URLCONF = 'PrimeraEntregaFinal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r'PrimeraEntregaFinalApp\templates\PrimeraEntregaFinalApp'],
+        'DIRS': [r'PrimeraEntregaFinalApp/templates/PrimeraEntregaFinalApp'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

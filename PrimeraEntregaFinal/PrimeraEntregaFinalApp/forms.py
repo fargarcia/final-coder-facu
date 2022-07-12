@@ -64,3 +64,9 @@ class AvatarForm(forms.Form):
     class Meta:
         model = Avatar
         fields = ['imagen']
+
+class CommentForm(forms.Form):
+    nombre = forms.CharField(max_length=30,label="Nombre")
+    contenido = forms.CharField(max_length=250,label="Comentario")
+    class Meta:
+        fields = ['nombre', 'contenido']

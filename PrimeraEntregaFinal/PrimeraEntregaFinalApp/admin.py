@@ -21,8 +21,14 @@ class AdministradorAdmin(admin.ModelAdmin):
     list_display = ('puesto','email')
     search_fields = ('puesto','email')
 
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('nombre','contenido')
+    search_fields = ('nombre','contenido')
+
+
 admin.site.register(Socio)
 admin.site.register(Deporte, DeporteAdmin)
 admin.site.register(Profesor, ProfesorAdmin)
 admin.site.register(Administrador, AdministradorAdmin)
 admin.site.register(Avatar)
+admin.site.register(Comentario)

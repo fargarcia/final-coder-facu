@@ -17,9 +17,22 @@ from django.contrib.admin.views.decorators import staff_member_required
 
 # Create your views here.
 def foro(request):
-   foro = Foro.objects.all() 
-   print(foro)
-   return render(request, "PrimeraEntregaFinalApp/foro.html", {"foro":foro})
+    comentarios = Comentario.objects.all() 
+    template_name = 'PrimeraEntregaFinalApp/foro.html'
+    new_comment = None
+
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+
+            data = comment_form.cleaned_data
+            new_comment = Comentario(nombre=data["nombre"],contenido=data["contenido"])
+            new_comment.save()
+    else:
+        comment_form = CommentForm()
+    return render(request, template_name, {'comments': comentarios,
+                                           'new_comment': new_comment,
+                                           'comment_form': comment_form})
 
 def inicio(request):
     inicio = Inicio.objects.all()
