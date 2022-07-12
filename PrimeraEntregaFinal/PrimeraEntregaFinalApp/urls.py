@@ -9,7 +9,7 @@ urlpatterns = [
     path('register', views.register_request, name="register"),
     path('editar_perfil', editar_perfil, name="editar_perfil"),
     path('agregar_avatar', agregar_avatar, name="agregar_avatar"),
-    path('foro', post_detail, name="foro"),
+    path('foro', foro, name="foro"),
     
     path('socios', views.socios, name="socios"),
     path('crear_socio/', views.crear_socio, name="crear_socio"),

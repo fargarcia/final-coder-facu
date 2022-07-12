@@ -34,6 +34,7 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'deportes' %}">Deportes</a></li>
                         {% if user.is_authenticated %}
                             <li class="nav-item"><a class="nav-link" href="{% url 'administracion' %}">Administracion</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'foro' %}">Foro</a></li>
                         {% endif %}
 
                         {% if user.is_authenticated %}

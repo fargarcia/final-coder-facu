@@ -38,30 +38,5 @@ class Administrador(models.Model):
     email = models.EmailField()
 
 
-class Post(models.Model):
-    title = models.CharField(max_length=50)
-    date = models.DateTimeField(auto_now_add=True)
-    content = models.CharField(max_length=500)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-    published = models.BooleanField()
-    
-    def __str__(self):
-        return self.title
-    
-
-class Comment(models.Model): 
-    post = models.ForeignKey(Post,
-                             on_delete=models.CASCADE,
-                             related_name='comments')
-    name = models.CharField(max_length=80) 
-    email = models.EmailField() 
-    body = models.TextField() 
-    created = models.DateTimeField(auto_now_add=True) 
-    updated = models.DateTimeField(auto_now=True) 
-    active = models.BooleanField(default=True) 
-
-    class Meta: 
-        ordering = ('created',) 
-
-    def __str__(self): 
-        return 'Comment by {} on {}'.format(self.name, self.post)
+class Foro(models.Model):
+    comentarios = models.CharField(max_length=300)
